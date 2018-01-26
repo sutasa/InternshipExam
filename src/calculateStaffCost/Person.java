@@ -64,7 +64,7 @@ public class Person {
 			System.out.println(name + " ข้อมูลไม่ถูกต้อง");
 		}else {
 			Calculate cal = new Calculate(moneyPerHour);
-			float money = cal.getCost(name, startDate, startTime, endTime);
+			float money = cal.getCost(name,startDate,startTime,endTime);
 			return money ;
 		}	
 		return 0 ;

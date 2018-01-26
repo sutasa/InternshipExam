@@ -46,8 +46,7 @@ public class Calculate {
 		System.out.printf("%s ชั่วโมงการทำงาน  %.2f ชม. ทำ OT %.2f ชม. ได้ค่าแรง %.2f บาท", name , Float.parseFloat(workinghour), Float.parseFloat(hourOT),money);
 		System.out.println();
 		
-		return money ;
-		
+		return money ;	
 	}
 
 	public String getDate(String startDate) {

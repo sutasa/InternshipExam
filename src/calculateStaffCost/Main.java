@@ -42,7 +42,7 @@ public class Main {
 		
 		}
 		 System.out.println();
-         System.out.println("----รวมรายได้ของแต่ละคน----");
+         System.out.println("=======รายได้โดยรวมของแต่ละคน=======");
          for (String map_name : map_of_person.keySet()) {
              System.out.printf("%s ได้เงิน %.2f บาท", map_name, map_of_person.get(map_name));
              System.out.println();
