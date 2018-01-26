@@ -13,7 +13,7 @@ public class Calculate {
 		this.moneyPerHourNormal = moneyPerHour;
 	}
 		
-	public Float getCost(String name, String startDate, String startTime, String endTime) {
+	public void getCost(String name, String startDate, String startTime, String endTime) {
 		float money = 0f ;
 		String textDate = getDate(startDate);
 		if(textDate.equals("Sat") || textDate.equals("Sun")) {
@@ -28,7 +28,7 @@ public class Calculate {
 		int i = 0 ;
 		String workinghour = "";
 		String hourOT = "";
-		String[] splitTime = twoTime.split(":");
+		String[] splitTime = twoTime.split("\\.");
 		
 		for(String string : splitTime) {
 			if(i == 0) {
@@ -43,7 +43,7 @@ public class Calculate {
 		money = (Float.parseFloat(workinghour)* moneyPerHourNormal * nonOT) + (Float.parseFloat(hourOT) * moneyPerHourNormal * ot);
 		System.out.printf("%s ชั่วโมงการทำงาน  %.2f ชม. ทำ OT %.2f ได้ค่าแรง %.2f บาท", name , Float.parseFloat(workinghour), Float.parseFloat(hourOT),money);
 		System.out.println();
-		return null ;
+//		return null ;
 	}
 
 	public String getDate(String startDate) {
