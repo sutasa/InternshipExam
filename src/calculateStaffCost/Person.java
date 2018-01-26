@@ -58,15 +58,16 @@ public class Person {
 		this.moneyPerHour = moneyPerHour;
 	}
 
-	public void calculate() {
+	public float calculate() {
 		
-		if(endTime == null || startTime == null || startDate == null || endDate == null) {
+		if( startDate == null || startTime == null || endDate == null || endTime == null) {
 			System.out.println(name + " ข้อมูลไม่ถูกต้อง");
 		}else {
 			Calculate cal = new Calculate(moneyPerHour);
-			cal.getCost(name, startDate, startTime, endTime);
-		}
-		
+			float money = cal.getCost(name, startDate, startTime, endTime);
+			return money ;
+		}	
+		return 0 ;
 	}
 	
 

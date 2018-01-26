@@ -3,6 +3,7 @@ package calculateStaffCost;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 
 public class Calculate {
 	private final Float  moneyPerHourNormal;
@@ -13,7 +14,7 @@ public class Calculate {
 		this.moneyPerHourNormal = moneyPerHour;
 	}
 		
-	public void getCost(String name, String startDate, String startTime, String endTime) {
+	public float getCost(String name, String startDate, String startTime, String endTime) {
 		float money = 0f ;
 		String textDate = getDate(startDate);
 		if(textDate.equals("Sat") || textDate.equals("Sun")) {
@@ -41,9 +42,12 @@ public class Calculate {
 		}
 		
 		money = (Float.parseFloat(workinghour)* moneyPerHourNormal * nonOT) + (Float.parseFloat(hourOT) * moneyPerHourNormal * ot);
-		System.out.printf("%s ชั่วโมงการทำงาน  %.2f ชม. ทำ OT %.2f ได้ค่าแรง %.2f บาท", name , Float.parseFloat(workinghour), Float.parseFloat(hourOT),money);
+		
+		System.out.printf("%s ชั่วโมงการทำงาน  %.2f ชม. ทำ OT %.2f ชม. ได้ค่าแรง %.2f บาท", name , Float.parseFloat(workinghour), Float.parseFloat(hourOT),money);
 		System.out.println();
-//		return null ;
+		
+		return money ;
+		
 	}
 
 	public String getDate(String startDate) {
